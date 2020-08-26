@@ -43,25 +43,12 @@
   /* IE6-9 */
 }
 
-/* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-/* Tablet desktop :768px. */
-/* small mobile :320px. */
-/* Large Mobile :480px. */
-/* 1. Theme default css */
-/* Normal desktop :1200px. */
-/* Normal desktop :992px. */
-/* Tablet desktop :768px. */
-/* small mobile :320px. */
-/* Large Mobile :480px. */
-/* line 6, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 15, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 .img {
   max-width: 100%;
   -webkit-transition: 0.3s;
@@ -70,7 +57,6 @@ body {
   transition: 0.3s;
 }
 
-/* line 19, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 a,
 .button {
   -webkit-transition: 0.3s;
@@ -78,6 +64,52 @@ a,
   -o-transition: 0.3s;
   transition: 0.3s;
 }
+
+.top_ele{
+  margin-top: 80px;
+}
+.navbar{
+  background-color: black;
+}
+.nav-link{
+  color:white;
+
+}
+#brand1{
+  color:white;
+}
+
+#brand2{
+  color:white;
+}
+.nav-item{
+  display: flex;
+}
+
+.login-btn{
+  background-color: lightcoral;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.reg-btn{
+  background-color: lightblue;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 5px;
+  margin-left: 8px;
+  margin-right:0px;
+}
+
 
 /* line 23, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 a:focus,
@@ -227,21 +259,6 @@ h3 {
   background: #f5f5f5;
 }
 
-/* line 135, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.bg-img-1 {
-  background-image: url(../img/slider/slider-img-1.jpg);
-}
-
-/* line 138, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.bg-img-2 {
-  background-image: url(../img/background-img/bg-img-2.jpg);
-}
-
-/* line 141, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.cta-bg-1 {
-  background-image: url(../img/background-img/bg-img-3.jpg);
-}
-
 /* line 146, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 .overlay {
   position: relative;
@@ -291,59 +308,7 @@ h3 {
   padding-top: 120px;
 }
 
-/* button style */
-/* line 188, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.owl-carousel .owl-nav div {
-  background: transparent;
-  height: 54px;
-  left: 0px;
-  line-height: 54px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  width: 54px;
-  font-size: 25px;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-}
 
-/* line 212, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.owl-carousel .owl-nav div.owl-next {
-  left: auto;
-  right: 0;
-}
-
-/* line 217, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.owl-carousel .owl-nav div.owl-next i {
-  position: relative;
-  right: -2px;
-  top: -3px;
-}
-
-/* line 224, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.owl-carousel .owl-nav div.owl-prev i {
-  position: relative;
-  right: 1px;
-  top: -2px;
-}
-
-/* line 234, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.owl-carousel:hover .owl-nav div {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* line 237, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-.owl-carousel:hover .owl-nav div:hover {
-  color: #fff;
-}
 
 /* line 244, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 .seperator {
