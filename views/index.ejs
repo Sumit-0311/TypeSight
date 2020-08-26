@@ -7,33 +7,26 @@
                    
                     <div class="jumbotron">
 
-                    <h3> Image to Text, PDF , voice outputs</h3>
+                    <h3 class="set"> Image to Text, PDF And Voice Outputs</h3>
                                 <form id="frmUploader" enctype="multipart/form-data" action="/upload" method="post">
                                     <div class="row">
-                                        <input class="boxed-btn-white" type="file" name="image" multiple />
+                                        <input class="boxed-btn-white set1" type="file" name="image" multiple />
 
-                                        <input class="boxed-btn-white ml-5" type="submit" name="submit" id="btnSubmit"
+                                        <input class="boxed-btn-white set2" type="submit" name="submit" id="btnSubmit"
                                             value=" Run OCR " /></div>
                                 </form>
                             </div>
                         </div>
+                        <input onclick='responsiveVoice.speak ("Welcome, You can now try here one of the best Text recognition using an OCR for free to convert Images into text,PDF and even as audio output just like the way you are listening right now. Go Give it a try !");'
+                        type='button' class="boxed-btn-white" value='🔊 Play' />
+                        <h4> <%= typeof msg != 'undefined' ? msg : '' %> </h4>
                     </div>
                 </div>
             </div>
-            <h4> <%= typeof msg != 'undefined' ? msg : '' %> </h4>
-            <input
-            onclick='responsiveVoice.speak ("Welcome, You can now try here one of the best Text recognition using an OCR for free to convert Images into text,PDF and even as audio output just like the way you are listening right now. Go Give it a try !");'
-            type='button' class="boxed-btn-white" value='🔊 Play' />
     <!-- slider_area_end -->
 
     <!-- about_area_start -->
     <div class="about_area">
-        <div class="shape-1 d-none d-xl-block">
-            <img src="img/about/shap1.png" alt="">
-        </div>
-        <div class="shape-2 d-none d-xl-block">
-            <img src="img/about/shap2.png" alt="">
-        </div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-5 col-md-5">
@@ -71,9 +64,9 @@
                             and Run OCR </h3>
                         <form id="frmUploader" enctype="multipart/form-data" action="/upload" method="post">
                             <div class="row ml-auto">
-                                <input class="boxed-btn ml-auto " type="file" name="image" multiple />
+                                <input class="boxed-btn-white set1 " type="file" name="image" multiple />
 
-                                <input class="boxed-btn ml-auto" type="submit" name="submit" id="btnSubmit"
+                                <input class="boxed-btn-white set2" type="submit" name="submit" id="btnSubmit"
                                     value=" Run OCR " /></div>
                         </form>
                     </div>

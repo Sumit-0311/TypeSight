@@ -47,6 +47,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
 }
 
 .img {
@@ -98,7 +99,7 @@ a,
 }
 
 .reg-btn{
-  background-color: lightblue;
+  background-color: lightseagreen;
   cursor: pointer;
   color: #fff;
   font-size: 16px;
@@ -108,6 +109,23 @@ a,
   border-radius: 5px;
   margin-left: 8px;
   margin-right:0px;
+}
+.jumbotron{
+  background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+}
+.set{
+  margin-left: 10px;
+  padding-bottom:10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  margin-top: -18px;
+}
+.set1{
+  margin-top:20px;
+  margin-left: 220px;
+}
+.set2{
+  margin-top:20px;
 }
 
 
@@ -511,9 +529,9 @@ h3 {
 
 /* line 2, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
 .section_title .sub_heading {
-  color: #c9c9c9;
+  color:#fff;
   display: block;
-  font-size: 15px;
+  font-size: 24px;
   text-transform: uppercase;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
@@ -599,8 +617,8 @@ h3 {
 
 /* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_section_title.scss */
 .serction_title_large h3 {
-  font-size: 80px;
-  font-weight: 700;
+  font-size: 60px;
+  font-weight: 200;
   color: #1F1F1F;
   display: inline-block;
   position: relative;
@@ -1978,7 +1996,7 @@ h3 {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color:transparent;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: .25rem;
@@ -2014,8 +2032,9 @@ h3 {
 /* line 91, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_faq.scss */
 .faq_area .btn-link.focus, .faq_area .btn-link:focus {
   text-decoration: none;
-  border-color: transparent;
+  border-color: white;
   box-shadow: none;
+  background-:transparent;
 }
 
 /* line 96, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_faq.scss */
