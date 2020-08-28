@@ -50,6 +50,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
@@ -106,7 +110,7 @@ app.post("/upload", (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-  // const file = `./pdfs/${req.file.originalname}.pdf`;
+  const file = `./pdfs/${req.file.originalname}.pdf`;
   res.download(downloadpath);
 });
 

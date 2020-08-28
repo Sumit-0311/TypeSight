@@ -47,7 +47,9 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-style: normal;
-  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+  /* background-image: linear-gradient(to top, #d9afd9 0%, #69a3c6 100%); */
+  background-color: #E9967A;
+  color: black;
 }
 
 .img {
@@ -70,18 +72,25 @@ a,
   margin-top: 80px;
 }
 .navbar{
-  background-color: black;
+  background-color:black;
+  backdrop-filter: blur(100px);
+  box-shadow: 0px 2px 10px rgba(229, 82, 59, 0.8);
+  color: white;
 }
 .nav-link{
   color:white;
-
 }
+
 #brand1{
-  color:white;
+  color:rgb(235, 121, 15);
+  font-family: Helvetica;
+  font-size: 26px;
 }
 
 #brand2{
   color:white;
+  font-family: Helvetica;
+  font-size: 26px;
 }
 .nav-item{
   display: flex;
@@ -94,8 +103,9 @@ a,
   font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 10px 30px;
+  padding: 12px 30px;
   border-radius: 5px;
+  height: 50px;
 }
 
 .reg-btn{
@@ -105,20 +115,33 @@ a,
   font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 10px 30px;
+  padding: 12px 30px;
   border-radius: 5px;
   margin-left: 8px;
   margin-right:0px;
+  height: 50px;
+  width:140px;
 }
 .jumbotron{
-  background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+  /* background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%); */
+  /* background-color: #69a3c6; */
+  background-color:#e69c8f;
+  box-shadow: 9px 9px 16px rgba(238, 106, 62, 0.7),
+    -9px -9px 16px rgba(234, 127, 91, 0.7);
+  border-radius: 10px;
+  padding: 40px;
+  border: 0;
+  margin-top: 120px;
+  color: black;
+
 }
 .set{
   margin-left: 10px;
   padding-bottom:10px;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Poppins";
   font-size: 48px;
   margin-top: -18px;
+  color:black;
 }
 .set1{
   margin-top:20px;
@@ -126,6 +149,33 @@ a,
 }
 .set2{
   margin-top:20px;
+}
+.neubtn{
+  margin-left: 440px;
+  box-shadow: 9px 9px 16px rgba(238, 106, 62, 0.5),
+    -9px -9px 16px rgba(234, 127, 91, 0.5);
+  border:0;
+  border-radius:8px;
+  background: transparent;
+  color: black;
+  display: inline-block;
+  padding: 16px 43px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.neubtn:hover{
+  background: #fff;
+  color: #000 !important;
+  border: 2px solid #fff;
+}
+
+.neubtn:focus {
+  outline: none;
 }
 
 
@@ -489,16 +539,15 @@ h3 {
 /* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_btn.scss */
 .boxed-btn-white {
   background: transparent;
-  color: #fff;
+  color: black;
   display: inline-block;
   padding: 16px 43px;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
   border: 0;
-  border: 2px solid #fff;
+  border: 2px solid white;
   text-align: center;
-  color: #fff !important;
   text-transform: capitalize;
 }
 
@@ -1368,7 +1417,7 @@ h3 {
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_about.scss */
 .about_area {
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 100px;
   position: relative;
 }
@@ -1509,7 +1558,7 @@ h3 {
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
-  color: #808080;
+  color:    #664841 ;
   margin-top: 30px;
   margin-bottom: 60px;
 }
@@ -2735,7 +2784,7 @@ h3 {
 /* line 74, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
 .form-contact .form-control::placeholder {
   font-weight: 300;
-  color: #999999;
+  color: black;
 }
 
 /* line 80, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
@@ -2793,6 +2842,7 @@ h3 {
 /* line 133, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_contact.scss */
 .contact-section {
   padding: 130px 0 100px;
+  margin-top:-180px;
 }
 
 @media (max-width: 991px) {

@@ -2071,7 +2071,7 @@ pre code {
 }
 
 .form-control:focus {
-    color: #495057;
+    color: black ;
     background-color: #fff;
     border-color: #80bdff;
     outline: 0;
@@ -2079,28 +2079,28 @@ pre code {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1
 }
 
 .form-control::-moz-placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1
 }
 
 .form-control:-ms-input-placeholder {
-    color: #6c757d;
+    color: black;
     opacity: 1
 }
 
 .form-control::-ms-input-placeholder {
-    color: #6c757d;
+    color:black;
     opacity: 1
 }
 
 .form-control::placeholder {
-    color: #6c757d;
-    opacity: 1
+    color:black;
+    opacity: 1;
 }
 
 .form-control:disabled,
@@ -4067,7 +4067,8 @@ tbody.collapse.show {
 
 .nav-link:focus,
 .nav-link:hover {
-    text-decoration: none
+    text-decoration: none;
+    color: lightcoral;
 }
 
 .nav-link.disabled {
