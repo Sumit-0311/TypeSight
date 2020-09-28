@@ -5,6 +5,15 @@ const app = express();
 const fs = require("fs");
 const pdf = require("pdfkit");
 var Tesseract = require("tesseract.js");
+const mongoose=require('mongoose');
+
+//db config
+const db = require('./config/keys').MongoURI;
+
+//mongo connect
+mongoose.connect(db, { useNewUrlParser: true})
+.then(()=>console.log('MongoDB connected...'))
+.catch(err=>console.log(err));
 
 //middlewares
 app.set("view engine", "ejs");
