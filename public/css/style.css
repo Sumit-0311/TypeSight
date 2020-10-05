@@ -178,6 +178,17 @@ a,
   outline: none;
 }
 
+.colchange{
+  color:#474545;
+}
+.logomar{
+  margin:auto;
+}
+
+#logomar-mid{
+  margin-top:4.5%;
+}
+
 
 /* line 23, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 a:focus,
@@ -244,6 +255,7 @@ p {
   margin-bottom: 13px;
   font-family: "Poppins", sans-serif;
 }
+
 
 /* line 73, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 label {

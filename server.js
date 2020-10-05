@@ -127,6 +127,10 @@ app.get("/download", (req, res) => {
   res.download(downloadpath);
 });
 
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
 app.get("/showdata", (req, res) => {});
 
 app.listen(PORT, () => {
