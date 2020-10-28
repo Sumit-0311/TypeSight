@@ -121,7 +121,6 @@ app.post("/upload", (req, res) => {
     }
   });
 });
-
 app.get("/download", (req, res) => {
   const file = `./pdfs/${req.file.originalname}.pdf`;
   res.download(downloadpath);
