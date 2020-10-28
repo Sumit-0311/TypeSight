@@ -89,16 +89,13 @@ app.post("/upload", (req, res) => {
             encoding: null
           }
         );
-        Tesseract.recognize(image)
-          .progress(function(p) {
-            console.log("progress", p);
-          })
-          .then(function(result) {
-            // res.send(result.text);
-            res.render("display", {
-              data: result.text,
-              path: __dirname + "/images/" + req.file.originalname
-            });
+        Tesseract.recognize(image,'eng',
+          { logger: m => console.log(m) }
+        ).then(({ data: { text } }) => {
+          res.render("display", {
+            data: text,
+            path: __dirname + "/images/" + req.file.originalname
+          });
 
             var myDoc = new pdf();
             myDoc.pipe(
@@ -107,7 +104,7 @@ app.post("/upload", (req, res) => {
             myDoc
               .font("Times-Roman")
               .fontSize(24)
-              .text(`${result.text}`, 100, 100);
+              .text(`${text}`, 100, 100);
             myDoc.end();
             const downloadpath =
               __dirname + "/pdfs/" + req.file.originalname.pdf;
