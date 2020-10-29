@@ -130,18 +130,18 @@ form.form1 {
         <div class="form">
             <div id="signup">
                 <h1>Sign Up for Free</h1>
-                <form class="form1" action="/" method="post">
+                <form class="form1" action="/register" method="POST">
                     <div class="top-row">
                         <div class="sub-entry">
-                            <input class="un" type="text" required autocomplete="off" placeholder="First Name" />
+                            <input class="un" type="text" required autocomplete="off" name="firstname" placeholder="First Name" />
                         </div>
                         <div class="sub-entry">
-                            <input class="un" type="text"required autocomplete="off" placeholder="Last Name"/>
+                            <input class="un" type="text"required autocomplete="off" name="lastname" placeholder="Last Name"/>
                         </div>
                     </div>
-                    <input class="un" type="email"required autocomplete="off" placeholder="Username"/>
+                    <input class="un" type="text" required autocomplete="off" name="username" placeholder="Username"/>
                     
-                    <input class="un" type="password"required autocomplete="off" placeholder="Set Password"/>
+                    <input class="un" type="password"required autocomplete="off" name="password" placeholder="Set Password"/>
                     <button class="submit" type="submit" class="button button-block"/>Signup</button>
                     <br>
                     <div class="ltext"><p align="center"><a href="/login">Already have an Account? Login Here</a></p></div>
