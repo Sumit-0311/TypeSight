@@ -8,8 +8,8 @@ We also have a Text-to-Speech API so that visually to help visually impaired peo
 
 # To Run the program
 
-1. To install all the dependecies, type the command npm intall
-2. Then node server.js to run
+1. To install all the dependencies, type the command npm install.
+2. Then node server.js to run.
 3. The site is hosted on localhost:5000.
 
 
