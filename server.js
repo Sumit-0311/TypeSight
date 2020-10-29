@@ -5,7 +5,13 @@ const app = express();
 const fs = require("fs");
 const pdf = require("pdfkit");
 var Tesseract = require("tesseract.js");
-const mongoose=require('mongoose');
+var mongoose=require('mongoose');
+var passport = require('passport');
+var bodyParser = require('body-parser');
+var User = require('./models/user');
+var localStrategy = require("passport-local");
+var passportLocalMongoose=  require('passport-local-mongoose');
+const user = require("./models/user");
 
 //db config
 const db = require('./config/keys').MongoURI;
@@ -18,7 +24,18 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology:true})
 //middlewares
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended: true }));
+app.use(require('express-session')({
+  secret: 'i am aman',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use(express.json());
 
@@ -59,13 +76,40 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/register", (req, res) => {
+  res.render("register");
+});
+//handling user signup
+app.post("/register",(req,res) => {
+  req.body.firstname
+  req.body.lastname
+  req.body.username
+  req.body.password
+  User.register(new User({firstname: req.body.firstname, lastname: req.body.lastname,username: req.body.username }),req.body.password,
+  (err,user)=> {
+    if(err){
+      console.log(err);
+      return res.render("register");
+    }
+    passport.authenticate("local")(req,res, function(){
+      res.redirect("/");
+    })
+  });
+});
+
 app.get("/login", (req, res) => {
   res.render("login");
 });
 
-app.get("/register", (req, res) => {
-  res.render("register");
-});
+//login logic
+//middleware
+app.post("/login",passport.authenticate("local", {
+  successRedirect: "/",
+  failureRedirect: "/login"
+}) , (req,res)=> {
+})
+
+
 
 app.get("/contact", (req, res) => {
   res.render("contact");
