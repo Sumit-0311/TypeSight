@@ -109,6 +109,17 @@ app.post("/login",passport.authenticate("local", {
 }) , (req,res)=> {
 })
 
+app.get("/logout", (req,res)=>{
+  req.logout();
+  res.redirect("/about");
+})
+//middleware 
+function isLoggedIn(req,res,next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect("/login");
+}
 
 
 app.get("/contact", (req, res) => {
