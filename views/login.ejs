@@ -67,9 +67,10 @@ font-family: 'Ubuntu', sans-serif;
 }
 
 
-.un:focus, .pass:focus {
+.un:focus, .pass:focus,.un:hover, .pass:hover {
     border: 1px solid white !important;
-    
+    background: white;
+    color: black;
 }
 
 .submit {
@@ -87,18 +88,30 @@ font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
+.submit:focus, .submit:hover {
+    text-decoration: none;
+    background: white;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    border: 1px solid white
+}
 
 .forgot {
-    text-shadow: 0px 0px 3px black;
     color: black;
     padding-top: 15px;
 }
 
-a {
+.forgot:focus, .forgot:hover {
+    text-decoration: none;
+    color:white;
+    padding-top: 15px;
+}
+
+/* a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
     color:black;
     text-decoration: none
-}
+} */
 
 @media (max-width: 600px) {
     .main {
@@ -114,6 +127,6 @@ a {
       <input class="un " type="text" align="center" name="username" placeholder="Username">
       <input class="pass" type="password" align="center" name="password" placeholder="Password">
       <input type="submit" class="submit" value="Sign in" align="center">
-      <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+      <p class="forgot" align="center">Forgot Password?</p>
     </div>
 </body>

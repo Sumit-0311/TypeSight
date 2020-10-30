@@ -1,17 +1,19 @@
 // Declaring
-const express = require("express");
-const multer = require("multer");
-const app = express();
-const fs = require("fs");
-const pdf = require("pdfkit");
-var Tesseract = require("tesseract.js");
-var mongoose=require('mongoose');
-var passport = require('passport');
-var bodyParser = require('body-parser');
-var User = require('./models/user');
-var localStrategy = require("passport-local");
-var passportLocalMongoose=  require('passport-local-mongoose');
-const user = require("./models/user");
+const express    = require("express");
+const multer     = require("multer");
+const app        = express();
+const fs         = require("fs");
+const pdf        = require("pdfkit");
+var Tesseract    = require("tesseract.js");
+var mongoose     = require('mongoose');
+var passport     = require('passport');
+var bodyParser   = require('body-parser');
+var User         = require('./models/user');
+const user       = require("./models/user");
+var flash        = require('connect-flash');
+var localStrategy  = require("passport-local");
+var passportLocalMongoose =  require('passport-local-mongoose');
+
 
 //db config
 const db = require('./config/keys').MongoURI;
@@ -21,25 +23,37 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology:true})
 .then(()=>console.log('MongoDB connected...'))
 .catch(err=>console.log(err));
 
-//middlewares
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(flash());
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended: true }));
+
 app.use(require('express-session')({
   secret: 'i am aman',
   resave: false,
   saveUninitialized: false
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
+
 passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(express.json());
 
-const PORT = process.env.PORT | 5000;
+//Flash Cards
+app.use(function(req, res, next){
+  res.locals.currentUser = req.user;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
+  next();
+});
+
+//Uploading
 
 var Storage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -71,14 +85,21 @@ function checkfiletype(file, cb) {
   }
 }
 
-//route
+//Routes
+
 app.get("/", (req, res) => {
+  res.render("landing");
+});
+
+app.get("/home", isLoggedIn , (req, res) => {
   res.render("index");
 });
+
 
 app.get("/register", (req, res) => {
   res.render("register");
 });
+
 //handling user signup
 app.post("/register",(req,res) => {
   req.body.firstname
@@ -89,10 +110,12 @@ app.post("/register",(req,res) => {
   (err,user)=> {
     if(err){
       console.log(err);
+      req.flash("error", "User Already Exists!");
       return res.render("register");
     }
-    passport.authenticate("local")(req,res, function(){
-      res.redirect("/");
+    passport.authenticate("local")(req, res, function () {
+      req.flash("success", "You are now Registered Successfully!!");
+      res.redirect("/home");
     })
   });
 });
@@ -102,31 +125,25 @@ app.get("/login", (req, res) => {
 });
 
 //login logic
-//middleware
 app.post("/login",passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/home",
   failureRedirect: "/login"
-}) , (req,res)=> {
+}), (req, res) => {
+    
 })
 
 app.get("/logout", (req,res)=>{
   req.logout();
-  res.redirect("/about");
+  req.flash("success", "Log Out Successful!!");
+  res.redirect("/");
 })
-//middleware 
-function isLoggedIn(req,res,next){
-  if(req.isAuthenticated()){
-    return next();
-  }
-  res.redirect("/login");
-}
 
 
-app.get("/contact", (req, res) => {
+app.get("/contact", isLoggedIn, (req, res) => {
   res.render("contact");
 });
 
-app.post("/upload", (req, res) => {
+app.post("/upload", isLoggedIn, (req, res) => {
   console.log(req.file);
   upload(req, res, err => {
     if (err) {
@@ -161,29 +178,42 @@ app.post("/upload", (req, res) => {
               .fontSize(24)
               .text(`${text}`, 100, 100);
             myDoc.end();
-            const downloadpath =
-              __dirname + "/pdfs/" + req.file.originalname.pdf;
-            app.get("/download", (req, res) => {
-              const file = `./pdfs/${req.file.originalname}.pdf`;
-              res.download(downloadpath);
-              res.download(file);
-            });
+          // const file = `./pdfs/${req.file.originalname}.pdf`;
+          // const file1 = req.file.originalname
+          // req.flash('fl', file1);
           });
       }
     }
   });
 });
+
 app.get("/download", (req, res) => {
-  const file = `./pdfs/${req.file.originalname}.pdf`;
-  res.download(downloadpath);
+  // const File = req.flash('fl');
+  // const file = `./pdfs/${File}.pdf`;
+  const file = `./pdfs/23.png.pdf`;
+  // res.download('./pdfs/23.png.pdf');
+  res.download(file);
+
 });
 
 app.get("/about", (req, res) => {
   res.render("about");
 });
 
-app.get("/showdata", (req, res) => {});
+app.get("/showdata", (req, res) => { });
 
+
+//Middleware
+function isLoggedIn(req,res,next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  req.flash("error", "You need to Login First!!");
+  res.redirect("/login");
+}
+
+//Port
+const PORT = process.env.PORT | 5000;
 app.listen(PORT, () => {
   console.log(`Server running on Port ${PORT}`);
 });

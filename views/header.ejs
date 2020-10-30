@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -52,23 +52,50 @@
             </ul>
   
             <!-- Right -->
+            
             <ul class="navbar-nav nav-flex-icons">
-        
+              <% if(!currentUser){ %>
               <li class="nav-item">
                 <a class="login-btn" href="/login" >Login</a>
               </li>
               <li class="nav-item">
                 <a class="reg-btn" href="/register">Sign Up</a>
-                <li class="nav-item">
-                <a class="login-btn" href="/logout">Logout</a>
               </li>
+              <%   } else { %>
+                <li class="nav-item dropdown nav-item">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user nav-link">Welcome, <%=currentUser.firstname %></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                    aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">Signed in as <%=currentUser.username %></a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                  </div>
+                </li>
+              <%     } %>
             </ul>
-  
           </div>
-  
         </div>
       </nav>
-    <!-- header-end -->
+      </body>
+<% if( error && error.length > 0 ){ %>
+
+  <div class="flashcard flash container">
+    <div class= "alert alert-danger" role= "alert">
+      <%= error %>
+    </div>
+<% } %>
+  </div>
+<% if( success && success.length > 0 ){ %>
+  <div class="flashcard flash container">
+    <div class= "alert alert-success" role= "alert">
+      <%= success %>
+    </div>
+      <% } %>
+    </div>
+
+    
 
     
 <!-- JS here -->
@@ -97,7 +124,5 @@
 
 <script src="js/main.js"></script>
 <!-- API for Speaking-->
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=HVyByr7B"></script>
-</body>
-
-</html>
+<!-- <script src="https://code.responsivevoice.org/responsivevoice.js?key=HVyByr7B"></script> -->
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=WooPbBzO"></script>

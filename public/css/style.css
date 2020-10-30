@@ -97,15 +97,15 @@ a,
 }
 
 .login-btn{
-  background-color: lightcoral;
+  background-color:  #ea5b44 ;
   cursor: pointer;
   color: #fff;
   font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 12px 30px;
+  padding: 10px 30px;
   border-radius: 5px;
-  height: 50px;
+  height: 45px;
 }
 
 .reg-btn{
@@ -115,12 +115,12 @@ a,
   font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 12px 30px;
+  padding: 10px 19px;
   border-radius: 5px;
   margin-left: 8px;
   margin-right:0px;
-  height: 50px;
-  width:140px;
+  height: 45px;
+  width:115px;
 }
 .jumbotron{
   /* background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%); */
@@ -187,6 +187,11 @@ a,
 
 #logomar-mid{
   margin-top:4.5%;
+}
+
+.flash{
+  margin-top: 5%;
+  margin-bottom: -100px;
 }
 
 
