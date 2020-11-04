@@ -65,10 +65,11 @@ form.form1 {
     font-family: 'Ubuntu', sans-serif;
     }
     
-    .un:focus, .pass:focus {
-        border: 1px solid white !important;
-        
-    }
+    .un:focus, .pass:focus,.un:hover, .pass:hover {
+    border: 1px solid white !important;
+    background: white;
+    color: black;
+}
     
     .submit {
       cursor: pointer;
@@ -123,6 +124,17 @@ form.form1 {
     margin-top:15px;
     margin-left:1%;
 }
+
+.forgot {
+    color: black;
+    padding-top: 15px;
+}
+
+.forgot:focus, .forgot:hover {
+    text-decoration: none;
+    color:white;
+    padding-top: 15px;
+}
 </style>
     
 <body>
@@ -144,7 +156,7 @@ form.form1 {
                     <input class="un" type="password"required autocomplete="off" name="password" placeholder="Set Password"/>
                     <button class="submit" type="submit" class="button button-block"/>Signup</button>
                     <br>
-                    <div class="ltext"><p align="center"><a href="/login">Already have an Account? Login Here</a></p></div>
+                    <p class="forgot" align="center"><a href="/login" class="forgot">Already have an Account? Login Here</a></p>
                     
                 </form>
             </div>
