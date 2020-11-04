@@ -11,6 +11,7 @@ var bodyParser   = require('body-parser');
 var User         = require('./models/user');
 const user       = require("./models/user");
 var flash        = require('connect-flash');
+const session    = require('express-session');
 var localStrategy  = require("passport-local");
 var passportLocalMongoose =  require('passport-local-mongoose');
 
@@ -30,7 +31,7 @@ app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({ extended: true }));
 
-app.use(require('express-session')({
+app.use(session({
   secret: 'i am aman',
   resave: false,
   saveUninitialized: false
@@ -91,7 +92,7 @@ app.get("/", (req, res) => {
   res.render("landing");
 });
 
-app.get("/home", isLoggedIn , (req, res) => {
+app.get("/home" ,isLoggedIn, (req, res) => {
   res.render("index");
 });
 
@@ -143,16 +144,16 @@ app.get("/contact", isLoggedIn, (req, res) => {
   res.render("contact");
 });
 
-app.post("/upload", isLoggedIn, (req, res) => {
+app.post("/upload",isLoggedIn, (req, res) => {
   console.log(req.file);
   upload(req, res, err => {
     if (err) {
-      res.render("index", { msg: err });
+      req.flash("error", err);
+      res.redirect("/home");
     } else {
       if (req.file == undefined) {
-        res.render("index", {
-          msg: " Image not Selected !"
-        });
+        req.flash("error", "Image Not Selected!");
+        res.redirect("/home");
       } else {
         console.log(req.file);
         var image = fs.readFileSync(
@@ -176,11 +177,10 @@ app.post("/upload", isLoggedIn, (req, res) => {
             myDoc
               .font("Times-Roman")
               .fontSize(24)
-              .text(`${text}`, 100, 100);
-            myDoc.end();
-          // const file = `./pdfs/${req.file.originalname}.pdf`;
-          // const file1 = req.file.originalname
-          // req.flash('fl', file1);
+            .text(`${text}`, 100, 100);
+          myDoc.end();
+          req.session.fname = req.file.originalname;
+          req.session.save();
           });
       }
     }
@@ -188,10 +188,8 @@ app.post("/upload", isLoggedIn, (req, res) => {
 });
 
 app.get("/download", (req, res) => {
-  // const File = req.flash('fl');
-  // const file = `./pdfs/${File}.pdf`;
-  const file = `./pdfs/23.png.pdf`;
-  // res.download('./pdfs/23.png.pdf');
+  const File = req.session.fname;
+  const file = `./pdfs/${File}.pdf`;
   res.download(file);
 
 });
