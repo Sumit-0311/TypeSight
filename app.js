@@ -144,6 +144,11 @@ app.get("/contact", isLoggedIn, (req, res) => {
   res.render("contact");
 });
 
+app.post("/contact", isLoggedIn, (req, res) => { 
+  req.flash("success", "Feedback Submitted Successfully!");
+  res.redirect("/contact");
+});
+
 app.post("/upload",isLoggedIn, (req, res) => {
   console.log(req.file);
   upload(req, res, err => {

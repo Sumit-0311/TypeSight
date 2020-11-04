@@ -1,5 +1,129 @@
 <%- include('./header.ejs') %>
 
 <div class="jumbotron container">
-    <h1>This Is The Landing Page! Work In Progress.... In The Mean While Please Login!</h1>
+    <h1><span id="headlogo"><span id="brand12">Type</span><span id="brand21">Sight</span></span></h1>
+</div>
+
+<div class="about_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-5 col-md-5">
+                <div class="about_thumb">
+                    <img src="img/about/about.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-5 offset-xl-1 col-md-6">
+                <div class="about_info">
+                    <div class="section_title">
+                        <span class="sub_heading">Tesseract</span>
+                        <h3> One of the most easiest , free and popular OCR engine Application </h3>
+                    </div>
+                    <p>Tesseract.js is a JavaScript OCR library based on the world's most popular Optical Character
+                        Recognition engine. It's insanely easy to use on both the client-side and on the server with
+                        Node.js. Server side, Tesseract.js only works with local images.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about_area_end -->
+
+
+<!-- faq_area_Start -->
+<div class="faq_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="serction_title_large mb-95">
+                    <h3>
+                        Frequently Asked
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                                    <img src="img/barnd/info.png" alt=""> How do I run OCR ?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion"
+                            style=" ">
+                            <div class="card-body">
+                                Upload your images in which you want to run the OCR and click on RUN OCR. Its simple
+                                as that.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <img src="img/barnd/info.png" alt="">How does Tesseract work?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion" style="">
+                            <div class="card-body">
+                                Tesseract — is an optical character recognition engine with open-source code, this
+                                is the most popular and qualitative OCR-library. OCR uses artificial intelligence
+                                for text search and its recognition on images. Tesseract is finding templates in
+                                pixels, letters, words and sentences.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false"
+                                    aria-controls="collapseThree">
+                                    <img src="img/barnd/info.png" alt="">What is OCR mean?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#accordion" style="">
+                            <div class="card-body">
+                                Optical character recognition (OCR) software works with your scanner to convert
+                                printed characters into digital text, allowing you to search for or edit your
+                                document in a word processing program. Read on to learn more about how to use OCR
+                                and the numerous benefits it has over traditional scanning.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="heading_4">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse"
+                                    data-target="#collapse_4" aria-expanded="false" aria-controls="collapse_4">
+                                    <img src="img/barnd/info.png" alt=""> What is the difference between OMR and
+                                    OCR?
+
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapse_4" class="collapse" aria-labelledby="heading_4" data-parent="#accordion"
+                            style="">
+                            <div class="card-body">
+                                OMR only detects the presence of a mark while OCR needs to discern what the mark is.
+                                OCR is used for converting printed documents to an editable format while an OMR is
+                                typically used in grading or tabulating. OCR requires a complex recognition engine
+                                while an OMR does not
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

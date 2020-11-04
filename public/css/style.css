@@ -69,7 +69,11 @@ a,
 }
 
 .top_ele{
-  margin-top: 80px;
+  margin-top: -3%;
+}
+
+.welcome{
+  margin-top: 8%;
 }
 .navbar{
   background-color:black;
@@ -91,6 +95,18 @@ a,
   color:white;
   font-family: Helvetica;
   font-size: 26px;
+}
+#brand12{
+  color:rgb(235, 121, 15);
+  font-family: Helvetica;
+  font-size: 60px;
+  margin-left: 38%;
+}
+
+#brand21{
+  color:white;
+  font-family: Helvetica;
+  font-size: 60px;
 }
 .nav-item{
   display: flex;
@@ -151,15 +167,15 @@ a,
   margin-top:20px;
 }
 .neubtn{
-  margin-left: 440px;
-  box-shadow: 9px 9px 16px rgba(238, 106, 62, 0.5),
-    -9px -9px 16px rgba(234, 127, 91, 0.5);
+  /* margin-left: 440px; */
+  height:60px;
+  box-shadow: 9px 9px 16px rgba(238, 106, 62, 0.5), -9px -9px 16px rgba(234, 127, 91, 0.5);
   border:0;
   border-radius:8px;
   background: transparent;
   color: black;
   display: inline-block;
-  padding: 16px 43px;
+  padding: 8px 34px;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -180,6 +196,7 @@ a,
 
 .colchange{
   color:#474545;
+  font-size: 18px;
 }
 .logomar{
   margin:auto;
@@ -194,21 +211,31 @@ a,
   margin-bottom: -100px;
 }
 
+.text{
+  color: black;
+  font-size: 16px;
+}
 
-/* line 23, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
+.list{
+  margin-bottom:20px;
+}
+
+.instruct{
+  margin-top:-3%;
+}
+
+
 a:focus,
 .button:focus, button:focus {
   text-decoration: none;
   outline: none;
 }
 
-/* line 28, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 a:focus {
   color: #fff;
   text-decoration: none;
 }
 
-/* line 32, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
 a:focus,
 a:hover,
 .portfolio-cat a:hover,
@@ -238,17 +265,6 @@ h4 a,
 h5 a,
 h6 a {
   color: inherit;
-}
-
-/* line 57, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-ul {
-  margin: 0px;
-  padding: 0px;
-}
-
-/* line 61, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
-li {
-  list-style: none;
 }
 
 /* line 64, C:/Users/SPN Graphics/Desktop/CL September/209/HTML/scss/_reset.scss */
