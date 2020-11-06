@@ -23,7 +23,6 @@
 </head>
 
 <body>
-
     <!-- header-start -->
     <nav class="navbar fixed-top navbar-expand-lg navbar scrolling-navbar">
         <div class="container">
@@ -78,15 +77,16 @@
           </div>
         </div>
       </nav>
-      </body>
-<% if( error && error.length > 0 ){ %>
+    </body>
 
-  <div class="flashcard flash container">
-    <div class= "alert alert-danger" role= "alert">
-      <%= error %>
-    </div>
-<% } %>
-  </div>
+    <% if( error && error.length > 0 ){ %>
+      <div class="flashcard flash container">
+        <div class= "alert alert-danger" role= "alert">
+          <%= error %>
+        </div>
+        <% } %> 
+      </div>
+    
 <% if( success && success.length > 0 ){ %>
   <div class="flashcard flash container">
     <div class= "alert alert-success" role= "alert">
@@ -124,5 +124,4 @@
 
 <script src="js/main.js"></script>
 <!-- API for Speaking-->
-<!-- <script src="https://code.responsivevoice.org/responsivevoice.js?key=HVyByr7B"></script> -->
 <script src="https://code.responsivevoice.org/responsivevoice.js?key=WooPbBzO"></script>

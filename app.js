@@ -111,8 +111,8 @@ app.post("/register",(req,res) => {
   (err,user)=> {
     if(err){
       console.log(err);
-      req.flash("error", "User Already Exists!");
-      return res.render("register");
+      req.flash("error","A user with the given username already exists");
+      return res.redirect("/register");
     }
     passport.authenticate("local")(req, res, function () {
       req.flash("success", "You are now Registered Successfully!!");
@@ -128,7 +128,9 @@ app.get("/login", (req, res) => {
 //login logic
 app.post("/login",passport.authenticate("local", {
   successRedirect: "/home",
-  failureRedirect: "/login"
+  failureRedirect: "/login",
+  badRequestMessage : 'Missing username or password.',
+  failureFlash: true
 }), (req, res) => {
     
 })
@@ -144,7 +146,7 @@ app.get("/contact", isLoggedIn, (req, res) => {
   res.render("contact");
 });
 
-app.post("/contact", isLoggedIn, (req, res) => { 
+app.post("/contact", isLoggedIn, (req, res) => {
   req.flash("success", "Feedback Submitted Successfully!");
   res.redirect("/contact");
 });
@@ -155,11 +157,13 @@ app.post("/upload",isLoggedIn, (req, res) => {
     if (err) {
       req.flash("error", err);
       res.redirect("/home");
-    } else {
+    }
+    else {
       if (req.file == undefined) {
         req.flash("error", "Image Not Selected!");
         res.redirect("/home");
-      } else {
+      }
+      else {
         console.log(req.file);
         var image = fs.readFileSync(
           __dirname + "/images/" + req.file.originalname,
@@ -168,8 +172,8 @@ app.post("/upload",isLoggedIn, (req, res) => {
           }
         );
         Tesseract.recognize(image,'eng',
-          { logger: m => console.log(m) }
-        ).then(({ data: { text } }) => {
+          { logger: m => console.log(m) })
+        .then(({ data: { text } }) => {
           res.render("display", {
             data: text,
             path: __dirname + "/images/" + req.file.originalname
@@ -196,14 +200,12 @@ app.get("/download", (req, res) => {
   const File = req.session.fname;
   const file = `./pdfs/${File}.pdf`;
   res.download(file);
-
 });
 
 app.get("/about", (req, res) => {
   res.render("about");
 });
 
-app.get("/showdata", (req, res) => { });
 
 
 //Middleware

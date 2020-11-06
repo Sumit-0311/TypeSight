@@ -99,14 +99,14 @@ a,
 #brand12{
   color:rgb(235, 121, 15);
   font-family: Helvetica;
-  font-size: 60px;
-  margin-left: 38%;
+  font-size: 72px;
+  margin-left: 28%;
 }
 
 #brand21{
   color:white;
   font-family: Helvetica;
-  font-size: 60px;
+  font-size: 72px;
 }
 .nav-item{
   display: flex;
@@ -149,8 +149,20 @@ a,
   border: 0;
   margin-top: 120px;
   color: black;
-
 }
+
+.inner{
+  background-color:#e69c8f;
+  box-shadow: 9px 9px 16px rgba(238, 106, 62, 0.7),
+    -9px -9px 16px rgba(234, 127, 91, 0.7);
+  border-radius: 10px;
+  padding: 40px;
+  border: 0;
+  margin-top: 120px;
+  color: black;
+  width: 50%;
+}
+
 .set{
   margin-left: 10px;
   padding-bottom:10px;
